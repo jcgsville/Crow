@@ -1601,7 +1601,7 @@ namespace crow // NOTE: Already documented in "crow/app.h"
 #else
                     res = response(crow::status::NO_CONTENT);
 #endif
-
+                    res.skip_body = true;
                     res.set_header("Allow", allow);
                     res.end();
                     found->method = method_actual;
